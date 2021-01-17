@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wiktoria
+  labels:
+    app: wiktoria
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: wiktoria
+  template:
+    metadata:
+      labels:
+        app: wiktoria
+    spec:
+      containers:
+      - name: wiktoria
+        image: hub.ivan.pl/wiktoria:6
